@@ -11,8 +11,7 @@ const client = new pg.Client({
   ssl      : settings.ssl
 });
 
-// const input = process.argv[2];
-
+// Find people function, searches for people in database
 const findPeople = ((db, name) => {
   const input = `SELECT * FROM famous_people WHERE first_name ILIKE $1::text OR last_name ILIKE $1::text;`;
 
@@ -33,6 +32,7 @@ const findPeople = ((db, name) => {
   });
 });
 
+// Connect to database and perform search
 client.connect((err) => {
   console.log('Searching ...');
 
