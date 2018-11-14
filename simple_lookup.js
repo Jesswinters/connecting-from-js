@@ -23,7 +23,7 @@ const findPeople = ((db, name) => {
     } else {
       console.log(`Found ${result.rows.length} person(s) by the name '${name}'`);
 
-      resultArray .forEach(info => {
+      resultArray.forEach(info => {
         console.log(`- ${info.id}: ${info.first_name} ${info.last_name}, born '${moment(info.birthdate).format('YYYY-MM-DD')}'`);
       });
     }
